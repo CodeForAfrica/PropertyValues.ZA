@@ -40,7 +40,11 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/1.0.0/lunr.min.js"></script>
 
-  <script type="text/javascript" src="/js/widget.js"></script>
+  {% if page.custom_js %}
+    {% for js_file in page.custom_js %}
+    <script src='{{ js_file }}' type="text/javascript"></script>
+    {% endfor %}
+  {% endif %}
 
   <!-- Google Analytics -->
   <script>
